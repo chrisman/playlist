@@ -10,4 +10,12 @@ This is my q1 pre-exam.
 
 __What I've learned so far__
 
-* how to npm
+* how to npm normalize into sass
+
+* more gulp tasks
+
+  * gulp-image
+
+  * gulp-sass objects
+
+* jade templates!

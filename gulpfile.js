@@ -5,19 +5,25 @@ var source = require('vinyl-source-stream')
 var sass = require('gulp-sass')
 var jade = require('gulp-jade')
 var normalize = require('node-normalize-scss')
+var image = require('gulp-image')
 
 gulp.task('html', function(){
-  return gulp.src('src/views/*.jade')
+  return gulp.src('src/views/*jade')
     .pipe(jade())
     .pipe(gulp.dest('dist'))
 });
+
+gulp.task('images', function(){
+  return gulp.src('src/assets/resources/track.fw.png')
+    .pipe(image())
+    .pipe(gulp.dest('dist/img'))
+})
 
 var sassOptions = {
   errLogToConsole: true,
   outputStyle: 'expanded',
   includePaths: normalize.includePaths
 }
-
 gulp.task('styles', function(){
   return gulp.src('src/sass/main.scss')
     .pipe(sass(sassOptions).on('error', sass.logError))
