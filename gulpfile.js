@@ -36,11 +36,18 @@ gulp.task('scripts', function(){
     .pipe(source('main.js'))
     .pipe(gulp.dest('dist/js'))
 });
+gulp.task('pscripts', function(){
+  return browserify('src/js/playlist.js')
+    .bundle()
+    .pipe(source('playlist.js'))
+    .pipe(gulp.dest('dist/js'))
+})
 
 gulp.task('watchman', function(){
   gulp.watch('src/js/*js', ['scripts'])
+  gulp.watch('src/js/playlist.js', ['pscripts'])
   gulp.watch('src/sass/*scss', ['styles'])
   gulp.watch('src/views/**/*jade' ['html'])
 });
 
-gulp.task('default',['html', 'scripts', 'styles', 'watchman']);
+gulp.task('default',['html', 'scripts', 'pscripts', 'styles', 'watchman']);

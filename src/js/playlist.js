@@ -2,7 +2,6 @@ var apibuddy = require('./api-buddy')
 var $ = require('jquery')
 
 $(document).ready(function(){
-  console.log('HELLLLO');
 
   var myarray = []
 
@@ -16,8 +15,8 @@ $(document).ready(function(){
     myarray = Array.prototype.slice.call(res["results"])
     myarray = apibuddy.shuffleArray(myarray)
 
-    for (var i = 0; i < 3; i++){
-      $('#splash-right').append('<img class="tmb" src="img/'+ myarray[i]["cover_art"] +'" >')
+    for (var i = 0; i < myarray.length; i++){
+      $('#thumb-scroller').append('<img src="img/'+ myarray[i]["cover_art"] +'" >')
     }
   })
 })

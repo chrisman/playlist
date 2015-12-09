@@ -499,6 +499,7 @@ button {
 }
 
 #playlistmain #thumb-scroller img {
+  width: 100px;
   white-space: nowrap;
   display: inline;
   padding: 0.5em 2em 2em 0;
