@@ -14,7 +14,7 @@ gulp.task('html', function(){
 });
 
 gulp.task('images', function(){
-  return gulp.src('src/assets/resources/track.fw.png')
+  return gulp.src('src/assets/img/*')
     .pipe(image())
     .pipe(gulp.dest('dist/img'))
 })

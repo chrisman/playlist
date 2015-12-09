@@ -9211,21 +9211,54 @@ return jQuery;
 }));
 
 },{}],2:[function(require,module,exports){
+var $ = require('jquery')
+
 module.exports = {
   helloworld: function(){
     return 'hello world!'
   },
-  getObject: function(){
-    return {}
+  url: {
+    get: 'https://lit-fortress-6467.herokuapp.com/object',
+    post: 'https://lit-fortress-6467.herokuapp.com/post'
   }
 }
 
-},{}],3:[function(require,module,exports){
+},{"jquery":1}],3:[function(require,module,exports){
 var apibuddy = require('./api-buddy')
 var $ = require('jquery')
 
 $(document).ready(function(){
   console.log('HELLLLO');
+
+  var myarray = []
+
+  var getter = $.ajax({
+    url: apibuddy['url']['get'],
+    method: 'GET',
+    dataType: 'json'
+  })
+
+  getter.done(function(res){
+    myarray = Array.prototype.slice.call(res["results"])
+    myarray = shuffleArray(myarray)
+
+    for (var i = 0; i < 3; i++){
+      $('#splash-right').append('<img class="tmb" src="img/'+ myarray[i]["cover_art"] +'" >')
+    }
+  })
 })
+
+function shuffleArray(a){
+  var m = a.length, t, i;
+
+  while (m) {
+    i = Math.floor(Math.random() * m--);
+    t = a[m];
+    a[m] = a[i];
+    a[i] = t;
+  }
+
+  return a;
+}
 
 },{"./api-buddy":2,"jquery":1}]},{},[3]);
