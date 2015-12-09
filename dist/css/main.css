@@ -1,0 +1,6 @@
+@import url(normalize.scss);
+* {
+  box-sizing: border-box; }
+
+body {
+  background-color: #0F0; }

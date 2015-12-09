@@ -13,7 +13,9 @@ gulp.task('html', function(){
 
 gulp.task('styles', function(){
   return gulp.src('src/sass/main.scss')
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sass({
+      includePaths: require('node-normalize-scss').includePaths
+    }).on('error', sass.logError))
     .pipe(gulp.dest('dist/css'))
 });
 
@@ -27,7 +29,7 @@ gulp.task('scripts', function(){
 gulp.task('watchman', function(){
   gulp.watch('src/js/*js', ['scripts'])
   gulp.watch('src/sass/*scss', ['styles'])
-  gulp.watch('src/views/*jade' ['html'])
+  gulp.watch('src/views/**/*jade' ['html'])
 });
 
 gulp.task('default',['html', 'scripts', 'styles', 'watchman']);
