@@ -9212,6 +9212,9 @@ return jQuery;
 
 },{}],2:[function(require,module,exports){
 module.exports = {
+  helloworld: function(){
+    return 'hello world!'
+  },
   getObject: function(){
     return {}
   }
