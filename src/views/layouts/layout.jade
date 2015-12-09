@@ -2,11 +2,12 @@ doctype html
 html
   head
     link(rel="stylesheet", type="text/css" href="css/main.css")
+    block page-title
   body
-    block head
-      header
+    header
+      block head
     block content
       #main
-    block foot
-      footer
+    footer
+      block foot
         p &copy; 2015 Chris Brown.

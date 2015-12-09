@@ -1,10 +1,14 @@
 extends ./layouts/layout
 
+block page-title
+  title Track Bin
+
 block content
   #main
     #splash-left
       p track bin
-      button choose tracks
+      a(href="playlist.html")
+        button choose tracks
     #splash-right
       img.bg(src="img/track.fw.png")
       img.tmb(src="https://placehold.it/80x80")

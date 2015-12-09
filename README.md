@@ -19,3 +19,5 @@ __What I've learned so far__
   * gulp-sass objects
 
 * jade templates!
+
+* flexbox thumbnail positioning! `display: flexbox; direction: column; justify-content: space-between;`
