@@ -3,9 +3,11 @@ var concat = require('gulp-concat')
 var browserify = require('browserify')
 var source = require('vinyl-source-stream')
 var sass = require('gulp-sass')
+var jade = require('jade')
 
 gulp.task('html', function(){
-  return gulp.src('src/index.html')
+  return gulp.src('src/views/*.jade')
+    .pipe(jade())
     .pipe(gulp.dest('dist'))
 });
 
