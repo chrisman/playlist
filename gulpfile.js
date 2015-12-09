@@ -3,7 +3,7 @@ var concat = require('gulp-concat')
 var browserify = require('browserify')
 var source = require('vinyl-source-stream')
 var sass = require('gulp-sass')
-var jade = require('jade')
+var jade = require('gulp-jade')
 
 gulp.task('html', function(){
   return gulp.src('src/views/*.jade')
@@ -27,7 +27,7 @@ gulp.task('scripts', function(){
 gulp.task('watchman', function(){
   gulp.watch('src/js/*js', ['scripts'])
   gulp.watch('src/sass/*scss', ['styles'])
-  gulp.watch('src/index.html' ['html'])
+  gulp.watch('src/views/*jade' ['html'])
 });
 
 gulp.task('default',['html', 'scripts', 'styles', 'watchman']);
