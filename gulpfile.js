@@ -4,6 +4,7 @@ var browserify = require('browserify')
 var source = require('vinyl-source-stream')
 var sass = require('gulp-sass')
 var jade = require('gulp-jade')
+var normalize = require('node-normalize-scss')
 
 gulp.task('html', function(){
   return gulp.src('src/views/*.jade')
@@ -11,11 +12,15 @@ gulp.task('html', function(){
     .pipe(gulp.dest('dist'))
 });
 
+var sassOptions = {
+  errLogToConsole: true,
+  outputStyle: 'expanded',
+  includePaths: normalize.includePaths
+}
+
 gulp.task('styles', function(){
   return gulp.src('src/sass/main.scss')
-    .pipe(sass({
-      includePaths: require('node-normalize-scss').includePaths
-    }).on('error', sass.logError))
+    .pipe(sass(sassOptions).on('error', sass.logError))
     .pipe(gulp.dest('dist/css'))
 });
 
