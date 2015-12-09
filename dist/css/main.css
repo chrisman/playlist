@@ -444,6 +444,10 @@ button {
   border-radius: 5px;
 }
 
+.dim {
+  opacity: 0;
+}
+
 #main div {
   width: 50%;
   float: left;
@@ -499,10 +503,11 @@ button {
 }
 
 #playlistmain #thumb-scroller img {
-  width: 100px;
+  width: 75px;
   white-space: nowrap;
   display: inline;
-  padding: 0.5em 2em 2em 0;
+  margin: 0.5em 2em 2em 0;
+  cursor: pointer;
 }
 
 #playlistmain #binarea {
