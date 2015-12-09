@@ -411,7 +411,18 @@ header, footer {
 
 header {
   background-color: #9b9b8d;
+  color: #fff;
   border-bottom: 1px solid #010101;
+  height: auto;
+}
+
+header p {
+  margin: 0;
+  padding-top: 4em;
+  padding-left: 2em;
+  padding-bottom: 0.5em;
+  font-size: 14pt;
+  letter-spacing: 0.1em;
 }
 
 footer {
@@ -423,6 +434,14 @@ footer {
 footer p {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
+  margin: 0;
+}
+
+button {
+  background-color: #353527;
+  color: #cdcdc9;
+  padding: 0.5em 2em;
+  border-radius: 5px;
 }
 
 #main div {
@@ -442,13 +461,6 @@ footer p {
   letter-spacing: 120%;
   font-size: 3em;
   margin: 0;
-}
-
-#splash-left button {
-  background-color: #353527;
-  color: #cdcdc9;
-  padding: 0.5em 2em;
-  border-radius: 5px;
 }
 
 #splash-right {
@@ -474,4 +486,43 @@ footer p {
   z-index: 10;
   margin: 0 auto;
   width: 40%;
+}
+
+#playlistmain {
+  background-color: #fff;
+}
+
+#playlistmain #thumb-scroller {
+  white-space: nowrap;
+  overflow-x: scroll;
+  padding-left: 2em;
+}
+
+#playlistmain #thumb-scroller img {
+  white-space: nowrap;
+  display: inline;
+  padding: 0.5em 2em 2em 0;
+}
+
+#playlistmain #binarea {
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: 1em;
+}
+
+#playlistmain #binarea #trackbin {
+  background-color: #eeeeee;
+  height: 30vh;
+  min-height: 200px;
+  width: 100%;
+  border: 1px solid black;
+}
+
+#playlistmain #binarea #buttons {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+#playlistmain #binarea #buttons button {
+  margin-right: 1em;
 }

@@ -18,22 +18,28 @@ $font-stack: Avenir, san-serif;
 * {
   box-sizing: border-box;
 }
-
 body {
   background-color: $color-splashleft-bg;
   font-family: $font-stack;
 }
-
 header, footer {
   height: 2em;
   clear: both;
 }
-
 header {
   background-color: $color-header-bg;
+  color: $color-header-txt;
   border-bottom: 1px solid $color-header-border;
+  height: auto;
+  p {
+    margin: 0;
+    padding-top: 4em;
+    padding-left: 2em;
+    padding-bottom: 0.5em;
+    font-size: 14pt;
+    letter-spacing: 0.1em;
+  }
 }
-
 footer {
   background-color: $color-footer-bg;
   color: $color-footer-txt;
@@ -41,14 +47,20 @@ footer {
   p {
     padding-top: 0.5em;
     padding-bottom: 0.5em;
+    margin: 0;
   }
+}
+button {
+  background-color: $color-splashleft-button-bg;
+  color: $color-splashleft-button-txt;
+  padding: 0.5em 2em;
+  border-radius: 5px;
 }
 
 #main div {
   width: 50%;
   float: left;
 }
-
 #splash-left {
   // background-color: rgb(55, 22, 163);
   height: 100%;
@@ -60,12 +72,6 @@ footer {
     letter-spacing: 120%;
     font-size: 3em;
     margin: 0;
-  }
-  button {
-    background-color: $color-splashleft-button-bg;
-    color: $color-splashleft-button-txt;
-    padding: 0.5em 2em;
-    border-radius: 5px;
   }
 }
 #splash-right {
@@ -88,5 +94,43 @@ footer {
     z-index: 10;
     margin: 0 auto;
     width: 40%;
+  }
+}
+
+
+////////////////////
+// ## PLAYLIST ## //
+////////////////////
+
+#playlistmain {
+  background-color: #fff;
+  #thumb-scroller {
+    white-space: nowrap;
+    overflow-x: scroll;
+    padding-left: 2em;
+    img {
+      white-space: nowrap;
+      display: inline;
+      padding: 0.5em 2em 2em 0;
+    }
+  }
+  #binarea {
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 1em;
+    #trackbin {
+      background-color: $color-splashleft-bg;
+      height: 30vh;
+      min-height: 200px;
+      width: 100%;
+      border: 1px solid black;
+    }
+    #buttons {
+      padding-top: 1em;
+      padding-bottom: 1em;
+      button {
+        margin-right: 1em;
+      }
+    }
   }
 }
