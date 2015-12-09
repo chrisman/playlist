@@ -519,6 +519,10 @@ button {
   border: 1px solid black;
 }
 
+#playlistmain #binarea #trackbin p {
+  margin: 0;
+}
+
 #playlistmain #binarea #buttons {
   padding-top: 1em;
   padding-bottom: 1em;

@@ -21,3 +21,5 @@ __What I've learned so far__
 * jade templates!
 
 * flexbox thumbnail positioning! `display: flexbox; direction: column; justify-content: space-between;`
+
+* async is killing me. i wanted almost all of my api logic to be in a module, but i couldn't get it to load the way I wanted it to, and I couldn't get the scoping right either. I ended up bailing out after having dumped way too much time into it, and just coding everything hard into the static js files. no modules, no tdd :(

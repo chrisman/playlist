@@ -124,6 +124,9 @@ button {
       min-height: 200px;
       width: 100%;
       border: 1px solid black;
+      p {
+        margin: 0;
+      }
     }
     #buttons {
       padding-top: 1em;
