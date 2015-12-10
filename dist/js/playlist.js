@@ -9236,12 +9236,16 @@ var $ = require('jquery')
 
 $(document).ready(function(){
 
-  var collector = [] // see: "$(document).on('click', '.thumb'"
+  var thumbcollector = [] // see: "$(document).on('click', '.thumb'"
+  var pcollector = []
 
   // ## button town ## //
   $('#cleartracks').click(function(){
-    $('#trackbin p').remove()
-    collector = []
+    $('#trackbin p').animate({'opacity': 0}, 500, function(){
+      this.remove()
+    })
+    thumbcollector = []
+    pcollector = []
   })
   $('#submitbin').click(function(){
     var poster = $.ajax({
@@ -9257,7 +9261,8 @@ $(document).ready(function(){
 
     // leave no trace
     $('#trackbin p').remove()
-    collector = []
+    thumbcollector = []
+    pcollector = []
   })
 
   var myarray = [] // for ajax results
@@ -9285,15 +9290,16 @@ $(document).ready(function(){
 
   $(document).on('click', '.thumb', function(){
     var myid = $(this).attr('id')
-    collector.push(myid)
+    thumbcollector.push(myid)
+    pcollector.push('p' + myid)
 
     /* HERE COMES SOME HOF */
-    $('#trackbin').append(myarray.filter(function(i){ // filter for match
+    $('#trackbin').append(myarray.filter(function(i){ // filter for match, with coersion
         return i['id'] == myid
       }).map(function(i){ // get artist and title values
         return i['artist'] +': '+ i['title']
       }).map(function(i){ // make it a p element
-        return "<p>"+ i +"</p>"
+        return '<p class="p'+ myid +'">'+ i +'</p>'
       }).join(''))
   })
 })
